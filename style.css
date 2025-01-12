@@ -1,0 +1,302 @@
+*{
+    font-family: "Lato", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h1, h2, h3, h4, .h1, .h2, .h3, .h4{
+    font-family: "Orbitron", serif;
+}
+
+:root{
+    --yellow: rgb(252, 246, 177);
+    --blue: rgb(61, 81, 140);
+    --violet: rgb(176, 163, 212);
+}
+
+body{
+    background-color: var(--blue);
+    color: var(--yellow);
+}
+
+.bg-yellow{
+    background-color: var(--yellow);
+}
+
+.bg-blue{
+    background-color: var(--blue);
+}
+
+.bg-red{
+    background-color: var(--violet);
+}
+
+.text-yellow{
+    color: var(--yellow);
+}
+
+.text-blue{
+    color: var(--blue);
+}
+
+.text-violet{
+    color: var(--violet);
+}
+
+/* navbar */
+
+.navbar{
+    height: 140px;
+    transition: 0.5s;
+    border-bottom: 2px solid var(--yellow);
+}
+
+.nav-link{
+    color: var(--yellow);
+    font-weight: 700;
+}
+
+.nav-link:hover{
+    color: white !important /*costretti perché JS opera inline e l'hover non funziona*/;
+    text-shadow: 2px 2px 5px var(--violet), -2px -2px 5px var(--violet);
+}
+
+.logo{
+    width: 50px;
+}
+
+.logo2{
+    width: 50px;
+    transition: 0.5s;
+}
+
+.border-bottom-b{
+    border-bottom: 2px solid var(--violet);
+}
+
+/* Header */
+
+.header{
+    background-image: linear-gradient(rgba(0,0,0), transparent, rgba(0,0,0)), url(./media/wp.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.btn-custom{
+    color: var(--yellow);
+    background-color: var(--blue);
+    border: 2px solid var(--yellow);
+    border-radius: 50px;
+    margin: 0px 15px;
+    padding: 20px 30px;
+    transition: 0.5s; /*meglio qui che all'hover altrimenti in uscita scatta l'animazione*/
+}
+
+.btn-custom:hover{
+    color: var(--blue);
+    background-color: var(--yellow);
+    transform: scale(1.1);
+}
+
+/* Positioned */
+
+.positioned{
+    position: relative;
+    top: -150px;
+}
+
+.col-custom{
+    padding: 10px;
+    border: 2px solid var(--blue);
+    cursor: pointer;
+    transition: 0.5s;
+    color: var(--blue);
+}
+
+.col-custom:hover{
+    transform: scale(1.1);
+    background-color: var(--blue);
+    color: var(--violet);
+    border: 2px solid var(--violet);
+}
+
+
+
+@media screen and (max-width: 600px){
+    .positioned{
+        position: static;
+    }
+}
+
+/* Numeri incrementali */
+
+.numbers{
+    font-size: 50px;
+    font-weight: 900;
+}
+
+#chart{
+    transition: 0.5s;    
+}
+
+#chart:hover{
+    transform: scale(1.2);
+}
+
+/* Swiper */
+
+.swiper{
+    height: 600px;
+}
+
+.card-review{
+    height: 250px;
+    width: 500px;
+    border: 2px solid var(--yellow);
+    border-radius: 20px;
+}
+
+.swiper-slide{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Pagina annunci */
+
+.accordion-item, .accordion-button{
+    background-color: var(--blue);
+    color: var(--yellow);
+}
+
+.accordion-button:not(.collapsed){
+    color: var(--violet);
+    background-color: var(--blue);
+    box-shadow: none;
+}
+
+.accordion-button:focus{
+    box-shadow: none;
+}
+
+.card-custom{
+    /* height: 200px; */
+    width: 30%;
+    border: 2px solid var(--yellow);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+}
+
+.img-card{
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+#wordInput{
+    background-color: var(--yellow);
+    color: var(--blue);
+    border-radius: 5px;
+}
+
+/* Chi siamo */
+
+.circle{
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    border: 3px solid var(--yellow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.opener{
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+    border: 2px solid var(--yellow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 3;
+    background-color: var(--blue);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.moved{
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+    border: 2px solid var(--violet);
+    /* background-color: var(--violet); */
+    background-position: center;
+    background-size: 100%;
+    position: absolute;
+    z-index: 2;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.vh-75{
+    height: 75vh;
+}
+
+.flip-card{
+    height: 400px;
+    width: 250px;
+    transition: 0.5s;
+    /* border: 2px solid var(--yellow);
+    border-radius: 20px;
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat; */
+    /* background-image: url(https://picsum.photos/400/400?5); */
+}
+
+.flip-card:hover > .inner{
+    transform: rotateY(180deg);
+}
+
+/* .flip-card:hover{
+    transform: rotateY(180deg);
+} lo diamo all'inner della card*/
+
+.inner{
+    border: 2px solid var(--yellow);
+    border-radius: 20px;
+    height: 100%;
+    width: 100%;
+    position: relative; /*i due figli avranno position absolute percé si devono sovrapporre*/
+    transition: 0.5s;
+    transform-style: preserve-3d;
+}
+
+.inner-face{
+    height: 400px;
+    width: 250px;
+    /* background-image: url(https://picsum.photos/400/400?5); */
+    background-position: center;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: absolute;
+    backface-visibility: hidden;
+    border-radius: 20px;
+}
+
+.inner-back{
+    height: 400px;
+    width: 250px;
+    position: absolute;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    text-align: center;
+    padding: 15px;
+}
