@@ -57,29 +57,3 @@ movedDivs.forEach((moved, i)=>{
         cardDescription.innerHTML = docente.description;
     });
 });
-
-// se volessi fare tutto in JS
-
-// let cardWrapper = document.querySelector('#cardWrapper');
-
-// movedDivs.forEach((moved, i)=>{
-//     moved.addEventListener('click', ()=>{
-//         let docente = teachers[i];
-//         cardWrapper.innerHTML = '';
-//         let div = document.createElement('div');
-//         div.classList.add('flip-card');
-//         div.innerHTML = `
-//             <div class="inner">
-//                         <div class="inner-face"></div>
-//                         <div class="inner-back">
-//                             <p id="cardName" class="h4">${docente.name}</p>
-//                             <p id="cardDescription" class="lead">${docente.description}</p>
-//                         </div>
-//                     </div>
-//         `;
-
-//         cardWrapper.appendChild(div);
-//         let innerFace = document.querySelector('.inner-face');
-//         innerFace.style.backgroundImage = `url(${docente.url})`;
-//     });
-// });

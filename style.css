@@ -57,7 +57,7 @@ body{
 }
 
 .nav-link:hover{
-    color: white !important /*costretti perché JS opera inline e l'hover non funziona*/;
+    color: white !important;
     text-shadow: 2px 2px 5px var(--violet), -2px -2px 5px var(--violet);
 }
 
@@ -90,9 +90,8 @@ body{
     border-radius: 50px;
     margin: 0px 15px;
     padding: 20px 30px;
-    transition: 0.5s; /*meglio qui che all'hover altrimenti in uscita scatta l'animazione*/
+    transition: 0.5s;
 }
-
 .btn-custom:hover{
     color: var(--blue);
     background-color: var(--yellow);
@@ -236,7 +235,6 @@ body{
     width: 75px;
     border-radius: 50%;
     border: 2px solid var(--violet);
-    /* background-color: var(--violet); */
     background-position: center;
     background-size: 100%;
     position: absolute;
@@ -253,28 +251,18 @@ body{
     height: 400px;
     width: 250px;
     transition: 0.5s;
-    /* border: 2px solid var(--yellow);
-    border-radius: 20px;
-    background-position: center;
-    background-size: 100%;
-    background-repeat: no-repeat; */
-    /* background-image: url(https://picsum.photos/400/400?5); */
 }
 
 .flip-card:hover > .inner{
     transform: rotateY(180deg);
 }
 
-/* .flip-card:hover{
-    transform: rotateY(180deg);
-} lo diamo all'inner della card*/
-
 .inner{
     border: 2px solid var(--yellow);
     border-radius: 20px;
     height: 100%;
     width: 100%;
-    position: relative; /*i due figli avranno position absolute percé si devono sovrapporre*/
+    position: relative;
     transition: 0.5s;
     transform-style: preserve-3d;
 }
@@ -282,7 +270,6 @@ body{
 .inner-face{
     height: 400px;
     width: 250px;
-    /* background-image: url(https://picsum.photos/400/400?5); */
     background-position: center;
     background-size: 100%;
     background-repeat: no-repeat;

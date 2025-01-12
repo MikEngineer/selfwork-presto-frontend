@@ -54,25 +54,6 @@ sword.addEventListener("click", ()=>{
     }
 });
 
-// Chiamate asincrone
-// 1. setInterval(): crea un loop infinito (non bloccando il browser come un for scritto male). Possiamo gestire la durata delle singole iterazioni.
-// Il setInteval è una funzione che vuole 2 parametri. Il primo è la callback; il secondo è l'intervallo che deve passare tra una iterazione e l'altra.
-// 2. clearInterval(): pulisce l'intervallo e lo ferma.
-// 3. setTimeout(): fapartire un blocco di istruzioni dopo tot millisecondi.
-
-// let counter = 0;
-
-// let interval = setInterval(()=>{
-    //     if(counter < 100){
-//         counter++;
-//         console.log(counter);
-//     }else{
-//         console.log("Adesso mi fermo");
-//         clearInterval(interval);
-//         // se non scrivessi il clearInterval(), il loop continuerebbe con l'else, riducendo le performances del sito
-//     }
-// }, 100);
-
 function createInterval(n, element, time){
     let counter = 0;
     
@@ -90,12 +71,7 @@ function createInterval(n, element, time){
     }, 8000);
 }
 
-// Voglio che i numeri inizino a scorrere quando l'utente inizia a vederli. Dobbiamo usare l'oggetto preimpostato del browser IntersectionObserver: è una Classe del browser che si occupa di far scattare una funzione nel momento in cui sul browser sono visibili gli elementi HTML che noi indichiamo.
-// new: è una kw che mi permette di GENERARE un OGGETTO partendo da una Classe.
-
-// Nella variabile stiamo creando un oggetto di Classe IntersectionObserver. In questo oggetto scatta una callback la quale accetta un qualsiasi numero di parametri e li salva nel parametro reale entries, che è un array. Essendo un array, dobbiamo usare forEach.
-
-let observer = new IntersectionObserver((entries)=>{ //automaticamente mette tutti gli entries in un array (...entries, rivedere spread operator). Serve un forEach essendo un array
+let observer = new IntersectionObserver((entries)=>{
     entries.forEach((entry)=>{
         if(entry.isIntersecting && confirm){
             createInterval(100, firstNumber, 100);
@@ -154,11 +130,6 @@ stars.forEach((star, index)=>{
     
 });
 
-
-
-
-
-// L'inizializzazione dello swiper deve essere l'ULTIMA cosa, altrimenti non funziona
 const swiper = new Swiper('.swiper', {
     // Optional parameters
     effect: "flip",
